@@ -1,4 +1,12 @@
+#ifndef IOSTREAM
+#define IOSTREAM
+#include <iostream>
+#endif
 
+#ifndef FONCTIONS_CPP
+#define FONCTIONS_CPP
+#include "Fonctions.cpp"
+#endif
 
 class Noeud
 {
@@ -31,9 +39,9 @@ class Noeud
 		double geta();
 
 		void afficher();
-		
+
 		bool operator==(Noeud);
-		
+
 	private:
 		double x;
 		double y;

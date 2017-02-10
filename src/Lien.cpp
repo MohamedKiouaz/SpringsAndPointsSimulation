@@ -1,6 +1,11 @@
-#ifndef NOEUD_H
-#define NOEUD_H
+#ifndef NOEUD_CPP
+#define NOEUD_CPP
 #include "Noeud.cpp"
+#endif
+
+#ifndef FONCTIONS_CPP
+#define FONCTIONS_CPP
+#include "Fonctions.cpp"
 #endif
 
 class Lien {
@@ -15,7 +20,7 @@ public:
     double getlongueur();
     Noeud* getN1();
     Noeud* getN2();
-    
+
     bool operator ==(Lien);
 
 private:

@@ -1,37 +1,28 @@
 #include <stdlib.h>
-#include <iostream>
-#include <math.h>
-#include <list> 
-
-#include "Fonctions.cpp"
-
-#include "Lien.cpp"
-#include "Grille.cpp"
-#include <SDL2/SDL.h>
 //#include <SDL2/SDL_ttf.h>
 #include "Render.cpp"
 
 int main(){
 	int taillex = 700;
 	int tailley = 700;
-	
+
 	Grille G = Grille();
-	
+
 	G.setlimite(-10, 10, -10, 10);
 	G.setdt(1e-4);
-	
+
 	G.newn(0, 9);
 
 	G.tabn.begin()->fixer();
-	
+
 	G.setfrottement(.7);
-	
+
 	G.setstabilisation(1e-2);
-		
+
 	SDL_Window* fenetre;
 	SDL_Renderer* renderer;
 	SDL_Event event;
-	
+
 	if(SDL_VideoInit(NULL) < 0) {
 		std::cout << "Erreur d'initialisation de la SDL : " << SDL_GetError() << "\n";
 		return EXIT_FAILURE;
@@ -42,7 +33,7 @@ int main(){
 		printf("Erreur lors de la creation d'une fenetre : %s",SDL_GetError());
 		return EXIT_FAILURE;
 	}
-	
+
 	renderer = SDL_CreateRenderer(fenetre, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC); // Création du renderer
 
 	if(renderer == NULL)//gestion des erreurs
@@ -50,7 +41,7 @@ int main(){
 		printf("Erreur lors de la creation d'un renderer : %s",SDL_GetError());
 		return EXIT_FAILURE;
 	}
-	
+
 	Render MoteurRendu = Render(taillex, tailley, renderer, &G);
 	MoteurRendu.Actualiser();
 	int continuer = 0;
@@ -123,7 +114,7 @@ int main(){
 						case SDLK_l:
 							SN->liberer();
 							break;
-						
+
 					}
 					break;
 				case SDL_MOUSEBUTTONDOWN:
@@ -166,30 +157,30 @@ int main(){
 					}
 					break;
 				default:
-					
+
 					break;
             }
         }
-        
+
         if(pause == false) {
 			for(int k = 0; k < 100; k++)
 				G.avancerdt();
 		}
-		
+
 		MoteurRendu.Actualiser(SN);
-		
+
 		if(G.stable() and afficher == true) {
 			G.afficher();
 			afficher = false;
 		}
-		
+
 		if(not G.stable())
 			afficher = true;
     }
-	
-	SDL_DestroyRenderer(renderer); 
+
+	SDL_DestroyRenderer(renderer);
 	SDL_DestroyWindow(fenetre);
 	SDL_Quit();
-	
+
 	return 0;
 }

@@ -1,43 +1,58 @@
-#ifndef NOEUD_H
-#define NOEUD_H
+#ifndef LIST
+#define LIST
+#include <list>
+#endif
+
+#ifndef NOEUD_CPP
+#define NOEUD_CPP
 #include "Noeud.cpp"
+#endif
+
+#ifndef LIEN_CPP
+#define LIEN_CPP
+#include "Lien.cpp"
+#endif
+
+#ifndef FONCTIONS_CPP
+#define FONCTIONS_CPP
+#include "Fonctions.cpp"
 #endif
 
 class Grille {
 	public:
 	Grille();
 	void afficher();
-	
+
 	void newn(double, double);
 	void newl(Noeud*, Noeud*);
-	
+
 	void deln(Noeud);
-	
+
 	void setdt(double);
-	
+
 	void calca();
 	void calcv();
 	void calcp();
 	void avancerdt();
-	
+
 	void setlimite(double, double, double, double);
 	void setfrottement(double);
 	void stabiliser();
-	
+
 	double gett();
 	double getlimitexm();
 	double getlimitexp();
 	double getlimiteym();
 	double getlimiteyp();
-	
+
 	void setstabilisation(double);
-	
+
 	double amax();
-	
+
 	bool existe(double, double);
 	bool stable();
-	
-	std::list<Noeud> tabn; 
+
+	std::list<Noeud> tabn;
 	std::list<Lien> tabl;
 
 	private:
@@ -67,24 +82,24 @@ bool Grille::stable() {
 }
 
 double Grille::gett(){
-	return this->t;	
+	return this->t;
 }
 
 double Grille::getlimitexm(){
-	return this->limitexm;	
+	return this->limitexm;
 }
 
 
 double Grille::getlimitexp(){
-	return this->limitexp;	
+	return this->limitexp;
 }
 
 double Grille::getlimiteym(){
-	return this->limiteym;	
+	return this->limiteym;
 }
 
 double Grille::getlimiteyp(){
-	return this->limiteyp;	
+	return this->limiteyp;
 }
 
 void Grille::setstabilisation(double s) {

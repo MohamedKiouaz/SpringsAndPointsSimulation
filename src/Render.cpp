@@ -1,3 +1,27 @@
+#ifndef NOEUD_CPP
+#define NOEUD_CPP
+#include "Noeud.cpp"
+#endif
+
+#ifndef LIEN_CPP
+#define LIEN_CPP
+#include "Lien.cpp"
+#endif
+
+#ifndef GRILLE_CPP
+#define GRILLE_CPP
+#include "Grille.cpp"
+#endif
+
+#ifndef SDL2_SDL_H
+#define SDL2_SDL_H
+#include <SDL2/SDL.h>
+#endif
+
+#ifndef LIST
+#define LIST
+#include <list>
+#endif
 
 class Render {
 	public:
@@ -9,7 +33,7 @@ class Render {
 	double pytoy(int);
 	int ytopy(double);
 	int getrayon();
-	
+
 	private:
 	int taillex;
 	int tailley;
@@ -20,7 +44,7 @@ class Render {
 
 Render::Render(int x, int y, SDL_Renderer* r, Grille* Gr) : taillex(x), tailley(y), renderer(r), rayon(4), G(Gr)
 {
-	
+
 }
 
 int Render::getrayon() {
@@ -46,7 +70,7 @@ int Render::ytopy(double y) {
 
 void Render::Actualiser() {
 	SDL_RenderClear(renderer);
-	
+
 	int x, y;
 	for(std::list<Noeud>::iterator it = this->G->tabn.begin(); it != this->G->tabn.end(); it++) {
 		x = this->xtopx(it->getx());
@@ -56,7 +80,7 @@ void Render::Actualiser() {
 				if(longueur(j, k) <= this->rayon)
 					SDL_RenderDrawPoint(renderer, x + j, y + k);
 	}
-	
+
 	int x1, y1, x2, y2;
 	for(std::list<Lien>::iterator itl = this->G->tabl.begin(); itl!= this->G->tabl.end(); itl++) {
 		x1 = this->xtopx(itl->getN1()->getx());
