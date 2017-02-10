@@ -2,12 +2,13 @@
 #include <iostream>
 #include <math.h>
 #include <list> 
+
 #include "Fonctions.cpp"
 
 #include "Lien.cpp"
 #include "Grille.cpp"
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
+//#include <SDL2/SDL_ttf.h>
 #include "Render.cpp"
 
 int main(){

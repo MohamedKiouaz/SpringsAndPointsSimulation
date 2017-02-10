@@ -1,3 +1,8 @@
+#ifndef NOEUD_H
+#define NOEUD_H
+#include "Noeud.cpp"
+#endif
+
 class Lien {
 public:
     Lien();
