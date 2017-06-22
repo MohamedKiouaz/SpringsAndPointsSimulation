@@ -1,5 +1,5 @@
 # SpringAndPointsSimulation
-2D Simulation of points linked by springs using C++ and SDL.
+2D Simulation of points linked by springs using C++ and SDL. This is just a fun project for my self.
 
 ## Examples
 Look at screenshots to understand how it works.
@@ -20,4 +20,4 @@ Lien | Springs | Link between 2 points. Have a equilibrium length and a spring c
 Grille | Field | A list of nodes and springs. Have a set of functions to evolve in the time.
 Render | Render of the Field | Render a field on a window
 
-There is one class per file. There is also a file `fonctions.php` that hold all the basic functions.
+There is one class per file. There is also a file `fonctions.cpp` that hold all the basic functions.
