@@ -1,3 +1,8 @@
+/*
+Author : Mohamed Kiouaz
+Please ask before using this code
+*/
+
 #ifndef IOSTREAM
 #define IOSTREAM
 #include <iostream>

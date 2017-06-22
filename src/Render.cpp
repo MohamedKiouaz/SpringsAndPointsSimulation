@@ -1,3 +1,8 @@
+/*
+Author : Mohamed Kiouaz
+Please ask before using this code
+*/
+
 #ifndef NOEUD_CPP
 #define NOEUD_CPP
 #include "Noeud.cpp"

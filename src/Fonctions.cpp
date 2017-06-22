@@ -1,3 +1,8 @@
+/*
+Author : Mohamed Kiouaz
+Please ask before using this code
+*/
+
 #ifndef MATH_H
 #define MATH_H
 #include <math.h>

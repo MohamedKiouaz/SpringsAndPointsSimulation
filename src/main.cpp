@@ -1,3 +1,8 @@
+/*
+Author : Mohamed Kiouaz
+Please ask before using this code
+*/
+
 #include <stdlib.h>
 //#include <SDL2/SDL_ttf.h>
 #include "Render.cpp"
